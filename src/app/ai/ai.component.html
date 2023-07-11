@@ -1,0 +1,16 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <button (click)="generateRandomData()">Generate Random Data</button>
+  </div>
+  
+  <div *ngIf="randomData">
+    <h3>Generated Random Data:</h3>
+    <p>{{ randomData }}</p>
+  </div>

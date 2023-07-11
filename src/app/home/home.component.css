@@ -1,0 +1,33 @@
+
+table {
+  
+  text-align: left;
+  position: relative;
+  border-collapse: separate; 
+  table-layout: auto;
+  width: 100%;  
+}
+th, td {
+  padding: 2px 75px;
+}
+tr.red th {
+  background: rgb(29, 1, 128);
+  color: white;
+}
+
+th {
+  background: white;
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+}
+
+div.scrollmenu {
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: rgb(248, 244, 244);
+  height: 375px;
+  width: Auto;
+  overflow: scroll;
+  overflow-y: scroll;
+}

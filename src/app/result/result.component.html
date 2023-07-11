@@ -1,0 +1,49 @@
+<div>
+    <h2 style="text-align: center; padding-top: 40px; font-size: 25px;">Results</h2>
+    <span><a routerLink="/home">Back-Home</a></span></div>
+    <div class="scrollmenu">
+      <table #myDiv id="excel-table" class="table table-bordered table-striped">
+        <thead>
+          <tr >
+            <th *ngFor="let head of heading">{{head.field}}</th>
+          
+          </tr>
+        </thead>
+        <tbody >
+          <tr *ngFor="let data of sample">
+            <td *ngFor="let value of data">{{ value }}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span></span>
+    <br>
+    <label for="cars" style="padding-right: 30px; padding-bottom: 2px;">Download format:</label>
+    
+    
+    <button
+      name="logout"
+      type="button"
+      class="btn btn-btn-md btn-outline-primary"
+      style="
+        background-color: rgb(0, 0, 121);
+        color: rgb(252, 252, 252);
+        margin-left: 10px;padding-left: 15px;
+      "
+      (click)="download()"
+    >
+      Download in excel
+    </button>
+    <button (click)="exportToJson()">Export to JSON</button>
+    <!-- popup which shows loading -->
+    <!-- <div id="popup" >
+    <div id="loading">
+    <div id="load" >
+      <p>Loading...</p>
+    </div>
+    
+    </div>
+    </div> -->
+    <br />
+    

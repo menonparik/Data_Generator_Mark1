@@ -1,0 +1,73 @@
+<br />
+<div>
+    <h2 style="text-align: center; padding-top: 40px; font-size: 25px;">CASUALITY</h2>
+    <span><a routerLink="/home">Back-Home</a></span></div>
+
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Field Name</th>
+        <th>Select Field</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of rows">
+        <td><input type="text" [(ngModel)]="row.field" /></td>
+        <td>
+          <select [(ngModel)]="row.value">
+            <option value="name">Name</option>
+            <option value="address">Address</option>
+            <option value="phoneNumbers">Phone Number</option>
+            <option value="emails">Email Address</option>
+            <option value="dob">Date of Birth</option>
+            <option value="makes">Make</option>
+            <option value="models">Model</option>
+            <option value="years">Year</option>
+            <option value="vins">Vehicle Identification Number (VIN)</option>
+            <option value="liabilities">Liability</option>
+            <option value="collisions">Collision</option>
+            <option value="comprehensives">Comprehensive Coverage</option>
+            <option value="deductibles">Deductibles</option>
+            <option value="additionalDrivers">Additional Drivers</option>
+          </select>
+        </td>
+        <td><button (click)="deleteRow(row)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <table>
+    <tbody>
+      <thead>
+        <tr>
+        <th>
+          <button (click)="addRow()">Add Column</button>
+        </th>
+        <th>
+          <button  (click)="generate()"><a href=""></a> Generate Data</button>
+        </th>
+        <th>
+          <input id="rowNumber" type="number" placeholder="rows"  [(ngModel)]="rowCount">
+        </th>
+        
+      </tr>
+      </thead>
+    </tbody>
+  </table>
+</div>
+<table id="table" style="display:none">
+  <thead>
+    <tr >
+      <th *ngFor="let row of savedData">{{row.field}}</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let col of objectArray2" >
+      <td *ngFor="let row of col">{{row}}</td>
+     
+    </tr>
+  </tbody>
+</table>
