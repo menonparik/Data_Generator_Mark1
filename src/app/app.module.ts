@@ -11,6 +11,9 @@ import { ResultComponent } from './result/result.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AIComponent } from './ai/ai.component';
+import { PropertyClaimComponent } from './property-claim/property-claim.component';
+import { AutoClaimComponent } from './auto-claim/auto-claim.component';
+import { SpecalityClaimComponent } from './specality-claim/specality-claim.component';
 
 
 
@@ -23,7 +26,10 @@ import { AIComponent } from './ai/ai.component';
     CasualtyComponent,
     PersonalComponent,
     ResultComponent,
-    AIComponent
+    AIComponent,
+    PropertyClaimComponent,
+    AutoClaimComponent,
+    SpecalityClaimComponent
   ],
   imports: [
     BrowserModule,
