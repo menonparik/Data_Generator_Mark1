@@ -1,16 +1,15 @@
+<h2>Data Generator</h2>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <div>
-    <button (click)="generateRandomData()">Generate Random Data</button>
-  </div>
-  
-  <div *ngIf="randomData">
-    <h3>Generated Random Data:</h3>
-    <p>{{ randomData }}</p>
-  </div>
+<label for="user-input">Enter Input Text: </label>
+<input type="text" id="user-input" [(ngModel)]="userInputText">
+</div>
+
+<button (click)="generateSimilarText()">Generate Similar Text</button>
+
+<div *ngIf="generatedText.length > 0">
+<p>Generated Similar Texts:</p>
+<ul>
+<li *ngFor="let text of generatedText">{{ text }}</li>
+</ul>
+</div>

@@ -1,24 +1,39 @@
 import { Component } from '@angular/core';
-import { ChatService } from '../chat-service.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-ai',
-  template: `
-    <button (click)="generateRandomData()">Generate Random Data</button>
-    <p>{{ randomData }}</p>`
+  templateUrl: './ai.component.html',
+ styleUrls: ['./ai.component.css']
 })
 export class AIComponent{
-  randomData!: string;
-
-  constructor(private ChatService: ChatService) {}
-
-  async generateRandomData() {
-    try {
-      this.randomData = await this.ChatService.generateRandomData();
-    } catch (error) {
-      // Handle error
+  
+  userInputText: string = '';
+  generatedText: string[] = [];
+ 
+  generateSimilarText(): void {
+    // Clear previously generated data
+    this.generatedText = [];
+ 
+    // Check if the user provided any input text
+    if (!this.userInputText.trim()) {
+      return;
+    }
+ 
+   
+    const perturbationFactor = 0.1;
+ 
+    // Generate similar text based on user input
+    for (let i = 0; i < 5; i++) { 
+      let similarText = '';
+      for (const char of this.userInputText) {
+        if (Math.random() < perturbationFactor) {
+          similarText += String.fromCharCode(char.charCodeAt(0) + Math.floor(perturbationFactor * 26 * (Math.random() - 0.5)));
+        } else {
+          similarText += char;
+        }
+      }
+      this.generatedText.push(similarText);
     }
   }
-}
-
-
+ }
