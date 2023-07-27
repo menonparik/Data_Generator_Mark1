@@ -54,7 +54,7 @@ export class SpecalityClaimComponent implements OnInit {
 
   // Define your database here
   database: { [key: string]: string[] } = {
-    name: [
+    dateOfLoss: [
       'Kylila Raselles',
       'Brigitta Ostler',
       'Alvira Flintoft',
@@ -156,7 +156,7 @@ export class SpecalityClaimComponent implements OnInit {
       'Libbi Hadwick',
       'Fanni Howard - Gater',
     ],
-    address: [
+    claimType: [
       'Suite 63',
       'PO Box 73383',
       '15th Floor',
@@ -258,7 +258,7 @@ export class SpecalityClaimComponent implements OnInit {
       'PO Box 59259',
       'Suite 53',
     ],
-    phoneNumbers: [
+    claimOrg: [
       '53-163-2607',
       '57-979-9900',
       '53-565-4326',
@@ -360,7 +360,7 @@ export class SpecalityClaimComponent implements OnInit {
       '00-619-6399',
       '89-375-8287',
     ],
-    emails: [
+    claimTitle: [
       "kraselles0@libertymutual.com",
       "bostler1@libertymutual.com",
       "aflintoft2@libertymutual.com",
@@ -462,7 +462,7 @@ export class SpecalityClaimComponent implements OnInit {
       "lhadwick2q@libertymutual.com",
       "fhowardgater2r@libertymutual.com"
   ],
-    dob: [
+    claimDesc: [
       '02-02-1975',
       '7/17/1981',
       '4/27/1976',
@@ -564,7 +564,7 @@ export class SpecalityClaimComponent implements OnInit {
       '1/28/1985',
       '02-11-1980',
     ],
-    makes: [
+    severity: [
       'Ford',
       'Lexus',
       'Toyota',
@@ -666,7 +666,7 @@ export class SpecalityClaimComponent implements OnInit {
       'Toyota',
       'Isuzu',
     ],
-    models: [
+    lossCode: [
       'Crown Victoria',
       'IS-F',
       'Prius Plug-in Hybrid',
@@ -765,7 +765,7 @@ export class SpecalityClaimComponent implements OnInit {
       'Tercel',
       'VehiCROSS',
     ],
-    years: [
+    lossType: [
       '2001',
       '2011',
       '2012',
@@ -867,7 +867,7 @@ export class SpecalityClaimComponent implements OnInit {
       '1992',
       '2001',
     ],
-    vins: [
+    potential: [
       '3D7TT2HTXBG324981',
       '2G61T5S36F9977421',
       '3C4PDCDGXFT902534',
@@ -969,7 +969,7 @@ export class SpecalityClaimComponent implements OnInit {
       'WAUPN94E09N043311',
       '1GYS3JEF3BR817880',
     ],
-    liabilities: [
+    currency: [
       '100000',
       '200000',
       '300000',
@@ -1071,7 +1071,7 @@ export class SpecalityClaimComponent implements OnInit {
       '400000',
       '500000',
     ],
-    collisions: [
+    potentialAmount: [
       '1000',
       '2000',
       '3000',
@@ -1173,7 +1173,7 @@ export class SpecalityClaimComponent implements OnInit {
       '4000',
       '4500',
     ],
-    comprehensives: [
+    claimsType: [
       '1000',
       '2000',
       '3000',
@@ -1275,7 +1275,7 @@ export class SpecalityClaimComponent implements OnInit {
       '4000',
       '4500',
     ],
-    deductibles: [
+    dateReceived: [
       '1000',
       '2000',
       '3000',
@@ -1377,7 +1377,7 @@ export class SpecalityClaimComponent implements OnInit {
       '4000',
       '4500',
     ],
-    additionalDrivers: [
+    claimantType: [
       'Ardisj	Kingswood',
       'Caroline	Purveys',
       'Roch	Brigden',
@@ -1479,7 +1479,7 @@ export class SpecalityClaimComponent implements OnInit {
       'Katy	Slevin',
       'Kore	Briston',
     ],
-    gender: [
+    claimantRep: [
       'Female',
       'Female',
       'Female',
@@ -1581,6 +1581,42 @@ export class SpecalityClaimComponent implements OnInit {
       'Female',
       'Female',
     ],
+    damageDesc:[],
+    lossEstimate:[],
+    deductible:[],
+    insurer:[],
+    role:[],
+    active:[],
+    firstName:[],
+    lastName:[],
+    vendor:[],
+    authority:[],
+    exposure:[],
+    costType:[],
+    costCategory:[],
+    reserving:[],
+    reserve:[],
+    expsoure1:[],
+    coverage:[],
+    reserveCurrency:[],
+    recoveryReserve:[],
+    deductibleRecovery:[],
+    deductible1:[],
+    payer:[],
+    reserveLine:[],
+    recoveryAmount:[],
+    reportableTax:[],
+    method:[],
+    payeeName:[],
+    payment:[],
+    payOrder:[],
+    mail:[],
+    payee:[],
+    mailingAddress:[],
+    eftRecord:[],
+    finalPayment:[],
+    paymentAmt:[],
+    incomeLocation:[],
   };
 
   fieldNameInput: string = '';
@@ -1588,70 +1624,173 @@ export class SpecalityClaimComponent implements OnInit {
 
   generate() {
     const {
-      name,
-      address,
-      phoneNumbers,
-      emails,
-      dob,
-      makes,
-      models,
-      years,
-      vins,
-      liabilities,
-      collisions,
-      comprehensives,
-      deductibles,
-      additionalDrivers,
-      gender,
+      dateOfLoss,
+      claimType,
+      claimOrg,
+      claimTitle,
+      claimDesc,
+      severity,
+      lossCode,
+      lossType,
+      potential,
+      currency,
+      potentialAmount,
+      claimsType,
+      dateReceived,
+      claimantType,
+      claimantRep,
+      damageDesc,
+      lossEstimate,
+      deductible,
+      insurer,
+      role,
+      active,
+      firstName,
+      lastName,
+      vendor,
+      authority,
+      exposure,
+      costType,
+      costCategory,
+      reserving,
+      reserve,
+      expsoure1,
+      coverage,
+      reserveCurrency,
+      recoveryReserve,
+      deductibleRecovery,
+      deductible1,
+      payer,
+      reserveLine,
+      recoveryAmount,
+      reportableTax,
+      method,
+      payeeName,
+      payment,
+      payOrder,
+      mail,
+      payee,
+      mailingAddress,
+      eftRecord,
+      finalPayment,
+      paymentAmt,
+      incomeLocation
     } = this.database;
-    for (let i = name.length - 1; i > 0; i--) {
+    for (let i = dateOfLoss.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [name[i], name[j]] = [name[j], name[i]];
-      [address[i], address[j]] = [address[j], address[i]];
-      [phoneNumbers[i], phoneNumbers[j]] = [phoneNumbers[j], phoneNumbers[i]];
-      [emails[i], emails[j]] = [emails[j], emails[i]];
-      [dob[i], dob[j]] = [dob[j], dob[i]];
-      [makes[i], makes[j]] = [makes[j], makes[i]];
-      [models[i], models[j]] = [models[j], models[i]];
-      [years[i], years[j]] = [years[j], years[i]];
-      [vins[i], vins[j]] = [vins[j], vins[i]];
-      [liabilities[i], liabilities[j]] = [liabilities[j], liabilities[i]];
-      [collisions[i], collisions[j]] = [collisions[j], collisions[i]];
-      [comprehensives[i], comprehensives[j]] = [
-        comprehensives[j],
-        comprehensives[i],
-      ];
-      [deductibles[i], deductibles[j]] = [deductibles[j], deductibles[i]];
-      [additionalDrivers[i], additionalDrivers[j]] = [
-        additionalDrivers[j],
-        additionalDrivers[i],
-      ];
-      [gender[i], gender[j]] = [gender[j], gender[i]];
+      [dateOfLoss[i], dateOfLoss[j]] = [dateOfLoss[j], dateOfLoss[i]];
+      [claimType[i], claimType[j]] = [claimType[j], claimType[i]];
+      [claimOrg[i], claimOrg[j]] = [claimOrg[j], claimOrg[i]];
+      [claimTitle[i], claimTitle[j]] = [claimTitle[j], claimTitle[i]];
+      [claimDesc[i], claimDesc[j]] = [claimDesc[j], claimDesc[i]];
+      [severity[i], severity[j]] = [severity[j], severity[i]];
+      [lossCode[i], lossCode[j]] = [lossCode[j], lossCode[i]];
+      [lossType[i], lossType[j]] = [lossType[j], lossType[i]];
+      [potential[i], potential[j]] = [potential[j], potential[i]];
+      [currency[i], currency[j]] = [currency[j], currency[i]];
+      [potentialAmount[i], potentialAmount[j]] = [potentialAmount[j], potentialAmount[i]];
+      [claimsType[i], claimsType[j]] = [claimsType[j],claimsType[i]];
+      [dateReceived[i], dateReceived[j]] = [dateReceived[j], dateReceived[i]];
+      [claimantType[i], claimantType[j]] = [claimantType[j],claimantType[i]];
+      [claimantRep[i], claimantRep[j]] = [claimantRep[j], claimantRep[i]];
+      [damageDesc[i], damageDesc[j]] = [damageDesc[j], damageDesc[i]];
+      [lossEstimate[i], lossEstimate[j]] = [lossEstimate[j], lossEstimate[i]];
+      [deductible[i], deductible[j]] = [deductible[j], deductible[i]];
+      [insurer[i], insurer[j]] = [insurer[j], insurer[i]];
+      [role[i], role[j]] = [role[j], role[i]];
+      [active[i], active[j]] = [active[j], active[i]];
+      [firstName[i], firstName[j]] = [firstName[j], firstName[i]];
+      [lastName[i], lastName[j]] = [lastName[j], lastName[i]];
+      [vendor[i], vendor[j]] = [vendor[j], vendor[i]];
+      [authority[i], authority[j]] = [authority[j], authority[i]];
+      [exposure[i], exposure[j]] = [exposure[j], exposure[i]];
+      [costType[i], costType[j]] = [costType[j], costType[i]];
+      [costCategory[i], costCategory[j]] = [costCategory[j], costCategory[i]];
+      [reserving[i], reserving[j]] = [reserving[j], reserving[i]];
+      [reserve[i], reserve[j]] = [reserve[j], reserve[i]];
+      [expsoure1[i], expsoure1[j]] = [expsoure1[j], expsoure1[i]];
+      [coverage[i], coverage[j]] = [coverage[j], coverage[i]];
+      [reserveCurrency[i], reserveCurrency[j]] = [reserveCurrency[j], reserveCurrency[i]];
+      [recoveryReserve[i], recoveryReserve[j]] = [recoveryReserve[j], recoveryReserve[i]];
+      [deductibleRecovery[i], deductibleRecovery[j]] = [deductibleRecovery[j], deductibleRecovery[i]];
+      [deductible1[i], deductible1[j]] = [deductible1[j], deductible1[i]];
+      [payer[i], payer[j]] = [payer[j], payer[i]];
+      [reserveLine[i], reserveLine[j]] = [reserveLine[j], reserveLine[i]];
+      [recoveryAmount[i], recoveryAmount[j]] = [recoveryAmount[j], recoveryAmount[i]];
+      [reportableTax[i], reportableTax[j]] = [reportableTax[j], reportableTax[i]];
+      [method[i], method[j]] = [method[j], method[i]];
+      [payeeName[i], payeeName[j]] = [payeeName[j], payeeName[i]];
+      [payment[i], payment[j]] = [payment[j], payment[i]];
+      [payOrder[i], payOrder[j]] = [payOrder[j], payOrder[i]];
+      [mail[i], mail[j]] = [mail[j], mail[i]];
+      [payee[i], payee[j]] = [payee[j], payee[i]];
+      [mailingAddress[i], mailingAddress[j]] = [mailingAddress[j], mailingAddress[i]];
+      [eftRecord[i], eftRecord[j]] = [eftRecord[j], eftRecord[i]];
+      [finalPayment[i], finalPayment[j]] = [finalPayment[j], finalPayment[i]];
+      [paymentAmt[i],paymentAmt[j]] = [paymentAmt[j], paymentAmt[i]];
+      [incomeLocation[i],incomeLocation[j]] = [incomeLocation[j], incomeLocation[i]];
+
     }
     const shuffledData = {
-      name,
-      address,
-      phoneNumbers,
-      emails,
-      dob,
-      makes,
-      models,
-      years,
-      vins,
-      liabilities,
-      collisions,
-      comprehensives,
-      deductibles,
-      additionalDrivers,
-      gender,
+      dateOfLoss,
+      claimType,
+      claimOrg,
+      claimTitle,
+      claimDesc,
+      severity,
+      lossCode,
+      lossType,
+      potential,
+      currency,
+      potentialAmount,
+      claimsType,
+      dateReceived,
+      claimantType,
+      claimantRep,
+      damageDesc,
+      lossEstimate,
+      deductible,
+      insurer,
+      role,
+      active,
+      firstName,
+      lastName,
+      vendor,
+      authority,
+      exposure,
+      costType,
+      costCategory,
+      reserving,
+      reserve,
+      expsoure1,
+      coverage,
+      reserveCurrency,
+      recoveryReserve,
+      deductibleRecovery,
+      deductible1,
+      payer,
+      reserveLine,
+      recoveryAmount,
+      reportableTax,
+      method,
+      payeeName,
+      payment,
+      payOrder,
+      mail,
+      payee,
+      mailingAddress,
+      eftRecord,
+      finalPayment,
+      paymentAmt,
+      incomeLocation
     };
     // console.log(this.database)
     console.log(shuffledData);
-    console.log(shuffledData['name'][1]);
-    console.log(shuffledData['address'][1]);
+    console.log(shuffledData['dateOfLoss'][1]);
+    console.log(shuffledData['claimType'][1]);
 
-    console.log(shuffledData['name'][2]);
-    console.log(shuffledData['phoneNumbers'][1]);
+    console.log(shuffledData['dateOfLoss'][2]);
+    console.log(shuffledData['claimOrg'][1]);
 
     //console.log(shuffledData['array1'][1]);
     //to verify user entered row count or not
@@ -1663,61 +1802,172 @@ export class SpecalityClaimComponent implements OnInit {
 
       console.log(this.rows);
       this.objectArray2 = [];
-      console.log(shuffledData['phoneNumbers'][1]);
+      console.log(shuffledData['claimOrg'][1]);
       console.log(this.savedData);
 
       //number of table count
       for (let j = 0; j < this.rowCount; j++) {
         //getting the values from user in from the dropdown
-        const index = j % shuffledData['name'].length;
-        console.log(shuffledData['name'].length);
+        const index = j % shuffledData['dateOfLoss'].length;
+        console.log(shuffledData['dateOfLoss'].length);
         for (let i = 0; i < this.savedData.length; i++) {
           console.log(this.savedData[i].value);
-          if (this.savedData[i].value == 'name') {
-            this.objectArray1.push(shuffledData['name'][index]);
+          if (this.savedData[i].value == 'dateOfLoss') {
+            this.objectArray1.push(shuffledData['dateOfLoss'][index]);
           }
-          if (this.savedData[i].value == 'address') {
-            this.objectArray1.push(shuffledData['address'][index]);
+          if (this.savedData[i].value == 'claimType') {
+            this.objectArray1.push(shuffledData['claimType'][index]);
           }
-          if (this.savedData[i].value == 'phoneNumbers') {
-            this.objectArray1.push(shuffledData['phoneNumbers'][index]);
+          if (this.savedData[i].value == 'claimOrg') {
+            this.objectArray1.push(shuffledData['claimOrg'][index]);
           }
-          if (this.savedData[i].value == 'emails') {
-            this.objectArray1.push(shuffledData['emails'][index]);
+          if (this.savedData[i].value == 'claimTitle') {
+            this.objectArray1.push(shuffledData['claimTitle'][index]);
           }
-          if (this.savedData[i].value == 'dob') {
-            this.objectArray1.push(shuffledData['dob'][index]);
+          if (this.savedData[i].value == 'claimDesc') {
+            this.objectArray1.push(shuffledData['claimDesc'][index]);
           }
-          if (this.savedData[i].value == 'gender') {
-            this.objectArray1.push(shuffledData['gender'][index]);
+          if (this.savedData[i].value == 'severity') {
+            this.objectArray1.push(shuffledData['severity'][index]);
           }
-          if (this.savedData[i].value == 'makes') {
-            this.objectArray1.push(shuffledData['makes'][index]);
+          if (this.savedData[i].value == 'lossCode') {
+            this.objectArray1.push(shuffledData['lossCode'][index]);
           }
-          if (this.savedData[i].value == 'models') {
-            this.objectArray1.push(shuffledData['models'][index]);
+          if (this.savedData[i].value == 'lossType') {
+            this.objectArray1.push(shuffledData['lossType'][index]);
           }
-          if (this.savedData[i].value == 'years') {
-            this.objectArray1.push(shuffledData['years'][index]);
+          if (this.savedData[i].value == 'potential') {
+            this.objectArray1.push(shuffledData['potential'][index]);
           }
-          if (this.savedData[i].value == 'vins') {
-            this.objectArray1.push(shuffledData['vins'][index]);
+          if (this.savedData[i].value == 'currency') {
+            this.objectArray1.push(shuffledData['currency'][index]);
           }
-          if (this.savedData[i].value == 'liabilities') {
-            this.objectArray1.push(shuffledData['liabilities'][index]);
+          if (this.savedData[i].value == 'potentialAmount') {
+            this.objectArray1.push(shuffledData['potentialAmount'][index]);
           }
-          if (this.savedData[i].value == 'collisions') {
-            this.objectArray1.push(shuffledData['collisions'][index]);
+          if (this.savedData[i].value == 'claimsType') {
+            this.objectArray1.push(shuffledData['claimsType'][index]);
           }
-          if (this.savedData[i].value == 'comprehensives') {
-            this.objectArray1.push(shuffledData['comprehensives'][index]);
+          if (this.savedData[i].value == 'dateReceived') {
+            this.objectArray1.push(shuffledData['dateReceived'][index]);
           }
-          if (this.savedData[i].value == 'deductibles') {
-            this.objectArray1.push(shuffledData['deductibles'][index]);
+          if (this.savedData[i].value == 'claimantType') {
+            this.objectArray1.push(shuffledData['claimantType'][index]);
           }
-          if (this.savedData[i].value == 'additionalDrivers') {
-            this.objectArray1.push(shuffledData['additionalDrivers'][index]);
+          if (this.savedData[i].value == 'claimantRep') {
+            this.objectArray1.push(shuffledData['claimantRep'][index]);
           }
+          if (this.savedData[i].value == 'damageDesc') {
+            this.objectArray1.push(shuffledData['damageDesc'][index]);
+          }
+          if (this.savedData[i].value == 'lossEstimate') {
+            this.objectArray1.push(shuffledData['lossEstimate'][index]);
+          }
+          if (this.savedData[i].value == 'deductible') {
+            this.objectArray1.push(shuffledData['deductible'][index]);
+          }
+          if (this.savedData[i].value == 'insurer') {
+            this.objectArray1.push(shuffledData['insurer'][index]);
+          }
+          if (this.savedData[i].value == 'role') {
+            this.objectArray1.push(shuffledData['role'][index]);
+          }
+          if (this.savedData[i].value == 'active') {
+            this.objectArray1.push(shuffledData['active'][index]);
+          }
+          if (this.savedData[i].value == 'firstName') {
+            this.objectArray1.push(shuffledData['firstName'][index]);
+          }
+          if (this.savedData[i].value == 'lastName') {
+            this.objectArray1.push(shuffledData['lastName'][index]);
+          }
+          if (this.savedData[i].value == 'vendor') {
+            this.objectArray1.push(shuffledData['vendor'][index]);
+          }
+          if (this.savedData[i].value == 'authority') {
+            this.objectArray1.push(shuffledData['authority'][index]);
+          }
+          if (this.savedData[i].value == 'exposure') {
+            this.objectArray1.push(shuffledData['exposure'][index]);
+          }
+          if (this.savedData[i].value == 'costType') {
+            this.objectArray1.push(shuffledData['costType'][index]);
+          }
+          if (this.savedData[i].value == 'costCategory') {
+            this.objectArray1.push(shuffledData['costCategory'][index]);
+          }
+          if (this.savedData[i].value == 'reserving') {
+            this.objectArray1.push(shuffledData['reserving'][index]);
+          }
+          if (this.savedData[i].value == 'reserve') {
+            this.objectArray1.push(shuffledData['reserve'][index]);
+          }
+          if (this.savedData[i].value == 'expsoure1') {
+            this.objectArray1.push(shuffledData['expsoure1'][index]);
+          }
+          if (this.savedData[i].value == 'coverage') {
+            this.objectArray1.push(shuffledData['coverage'][index]);
+          }
+          if (this.savedData[i].value == 'reserveCurrency') {
+            this.objectArray1.push(shuffledData['reserveCurrency'][index]);
+          }
+          if (this.savedData[i].value == 'recoveryReserve') {
+            this.objectArray1.push(shuffledData['recoveryReserve'][index]);
+          }
+          if (this.savedData[i].value == 'deductibleRecovery') {
+            this.objectArray1.push(shuffledData['deductibleRecovery'][index]);
+          }
+          if (this.savedData[i].value == 'deductible1') {
+            this.objectArray1.push(shuffledData['deductible1'][index]);
+          }
+          if (this.savedData[i].value == 'payer') {
+            this.objectArray1.push(shuffledData['payer'][index]);
+          }
+          if (this.savedData[i].value == 'reserveLine') {
+            this.objectArray1.push(shuffledData['reserveLine'][index]);
+          }
+          if (this.savedData[i].value == 'recoveryAmount') {
+            this.objectArray1.push(shuffledData['recoveryAmount'][index]);
+          }
+          if (this.savedData[i].value == 'reportableTax') {
+            this.objectArray1.push(shuffledData['reportableTax'][index]);
+          }
+          if (this.savedData[i].value == 'method') {
+            this.objectArray1.push(shuffledData['method'][index]);
+          }
+          if (this.savedData[i].value == 'payeeName') {
+            this.objectArray1.push(shuffledData['payeeName'][index]);
+          }
+          if (this.savedData[i].value == 'payment') {
+            this.objectArray1.push(shuffledData['payment'][index]);
+          }
+          if (this.savedData[i].value == 'payOrder') {
+            this.objectArray1.push(shuffledData['payOrder'][index]);
+          }
+          if (this.savedData[i].value == 'mail') {
+            this.objectArray1.push(shuffledData['mail'][index]);
+          }
+          if (this.savedData[i].value == 'payee') {
+            this.objectArray1.push(shuffledData['payee'][index]);
+          }
+          if (this.savedData[i].value == 'mailingAddress') {
+            this.objectArray1.push(shuffledData['mailingAddress'][index]);
+          }
+          if (this.savedData[i].value == 'eftRecord') {
+            this.objectArray1.push(shuffledData['eftRecord'][index]);
+          }
+          if (this.savedData[i].value == 'finalPayment') {
+            this.objectArray1.push(shuffledData['finalPayment'][index]);
+          }
+          if (this.savedData[i].value == 'paymentAmt') {
+            this.objectArray1.push(shuffledData['paymentAmt'][index]);
+          }
+          if (this.savedData[i].value == 'incomeLocation') {
+            this.objectArray1.push(shuffledData['incomeLocation'][index]);
+          }
+         
+
+
 
         }
         //overall data stored in objectArray2 for all row

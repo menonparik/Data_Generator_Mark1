@@ -54,7 +54,7 @@ export class CasualtyComponent implements OnInit {
 
   // Define your database here
   database: { [key: string]: string[] } = {
-    name: [
+    model: [
       'Kylila Raselles',
       'Brigitta Ostler',
       'Alvira Flintoft',
@@ -156,7 +156,7 @@ export class CasualtyComponent implements OnInit {
       'Libbi Hadwick',
       'Fanni Howard - Gater',
     ],
-    address: [
+    style: [
       'Suite 63',
       'PO Box 73383',
       '15th Floor',
@@ -258,7 +258,7 @@ export class CasualtyComponent implements OnInit {
       'PO Box 59259',
       'Suite 53',
     ],
-    phoneNumbers: [
+    vehicleLocation: [
       '53-163-2607',
       '57-979-9900',
       '53-565-4326',
@@ -360,7 +360,7 @@ export class CasualtyComponent implements OnInit {
       '00-619-6399',
       '89-375-8287',
     ],
-    emails: [
+    lossParty: [
       "kraselles0@libertymutual.com",
       "bostler1@libertymutual.com",
       "aflintoft2@libertymutual.com",
@@ -462,7 +462,7 @@ export class CasualtyComponent implements OnInit {
       "lhadwick2q@libertymutual.com",
       "fhowardgater2r@libertymutual.com"
   ],
-    dob: [
+    ownership: [
       '02-02-1975',
       '7/17/1981',
       '4/27/1976',
@@ -564,7 +564,7 @@ export class CasualtyComponent implements OnInit {
       '1/28/1985',
       '02-11-1980',
     ],
-    makes: [
+    owner: [
       'Ford',
       'Lexus',
       'Toyota',
@@ -666,7 +666,7 @@ export class CasualtyComponent implements OnInit {
       'Toyota',
       'Isuzu',
     ],
-    models: [
+    otherContact: [
       'Crown Victoria',
       'IS-F',
       'Prius Plug-in Hybrid',
@@ -765,7 +765,7 @@ export class CasualtyComponent implements OnInit {
       'Tercel',
       'VehiCROSS',
     ],
-    years: [
+    relationship: [
       '2001',
       '2011',
       '2012',
@@ -867,7 +867,7 @@ export class CasualtyComponent implements OnInit {
       '1992',
       '2001',
     ],
-    vins: [
+    witness: [
       '3D7TT2HTXBG324981',
       '2G61T5S36F9977421',
       '3C4PDCDGXFT902534',
@@ -969,7 +969,7 @@ export class CasualtyComponent implements OnInit {
       'WAUPN94E09N043311',
       '1GYS3JEF3BR817880',
     ],
-    liabilities: [
+    person: [
       '100000',
       '200000',
       '300000',
@@ -1071,7 +1071,7 @@ export class CasualtyComponent implements OnInit {
       '400000',
       '500000',
     ],
-    collisions: [
+    lossCause: [
       '1000',
       '2000',
       '3000',
@@ -1173,7 +1173,7 @@ export class CasualtyComponent implements OnInit {
       '4000',
       '4500',
     ],
-    comprehensives: [
+    lossTime: [
       '1000',
       '2000',
       '3000',
@@ -1275,7 +1275,7 @@ export class CasualtyComponent implements OnInit {
       '4000',
       '4500',
     ],
-    deductibles: [
+    lossDesc: [
       '1000',
       '2000',
       '3000',
@@ -1377,7 +1377,7 @@ export class CasualtyComponent implements OnInit {
       '4000',
       '4500',
     ],
-    additionalDrivers: [
+    lossLocation: [
       'Ardisj	Kingswood',
       'Caroline	Purveys',
       'Roch	Brigden',
@@ -1479,7 +1479,7 @@ export class CasualtyComponent implements OnInit {
       'Katy	Slevin',
       'Kore	Briston',
     ],
-    gender: [
+    lossReport: [
       'Female',
       'Female',
       'Female',
@@ -1581,77 +1581,135 @@ export class CasualtyComponent implements OnInit {
       'Female',
       'Female',
     ],
+    vehicleDrivable:[],
+    vehicleTow:[],
+    airbags:[],
+    damage:[],
+    impact:[],
+    injury:[],
+    injuryDesc:[],
+    injuryType:[],
+    treater:[],
+    agency:[],
+    agencyName:[],
+    agencyType:[],
+    firstReportLoss:[],
+    where:[],
+
   };
 
-  fieldNameInput: string = '';
+  fieldmodelInput: string = '';
   fieldValueDropdown: string = '';
 
   generate() {
     const {
-      name,
-      address,
-      phoneNumbers,
-      emails,
-      dob,
-      makes,
-      models,
-      years,
-      vins,
-      liabilities,
-      collisions,
-      comprehensives,
-      deductibles,
-      additionalDrivers,
-      gender,
+      model,
+      style,
+      vehicleLocation,
+      lossParty,
+      ownership,
+      owner,
+      otherContact,
+      relationship,
+      witness,
+      person,
+      lossCause,
+      lossTime,
+      lossDesc,
+      lossLocation,
+      lossReport,
+      vehicleDrivable,
+      vehicleTow,
+      airbags,
+      damage,
+      impact,
+      injury,
+      injuryDesc,
+      injuryType,
+      treater,
+      agency,
+      agencyName,
+      agencyType,
+      firstReportLoss,
+      where,
     } = this.database;
-    for (let i = name.length - 1; i > 0; i--) {
+    for (let i = model.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [name[i], name[j]] = [name[j], name[i]];
-      [address[i], address[j]] = [address[j], address[i]];
-      [phoneNumbers[i], phoneNumbers[j]] = [phoneNumbers[j], phoneNumbers[i]];
-      [emails[i], emails[j]] = [emails[j], emails[i]];
-      [dob[i], dob[j]] = [dob[j], dob[i]];
-      [makes[i], makes[j]] = [makes[j], makes[i]];
-      [models[i], models[j]] = [models[j], models[i]];
-      [years[i], years[j]] = [years[j], years[i]];
-      [vins[i], vins[j]] = [vins[j], vins[i]];
-      [liabilities[i], liabilities[j]] = [liabilities[j], liabilities[i]];
-      [collisions[i], collisions[j]] = [collisions[j], collisions[i]];
-      [comprehensives[i], comprehensives[j]] = [
-        comprehensives[j],
-        comprehensives[i],
+      [model[i], model[j]] = [model[j], model[i]];
+      [style[i], style[j]] = [style[j], style[i]];
+      [vehicleLocation[i], vehicleLocation[j]] = [vehicleLocation[j], vehicleLocation[i]];
+      [lossParty[i], lossParty[j]] = [lossParty[j], lossParty[i]];
+      [ownership[i], ownership[j]] = [ownership[j], ownership[i]];
+      [owner[i], owner[j]] = [owner[j], owner[i]];
+      [otherContact[i], otherContact[j]] = [otherContact[j], otherContact[i]];
+      [relationship[i], relationship[j]] = [relationship[j], relationship[i]];
+      [witness[i], witness[j]] = [witness[j], witness[i]];
+      [person[i], person[j]] = [person[j], person[i]];
+      [lossCause[i], lossCause[j]] = [lossCause[j], lossCause[i]];
+      [lossTime[i], lossTime[j]] = [
+        lossTime[j],
+        lossTime[i],
       ];
-      [deductibles[i], deductibles[j]] = [deductibles[j], deductibles[i]];
-      [additionalDrivers[i], additionalDrivers[j]] = [
-        additionalDrivers[j],
-        additionalDrivers[i],
+      [lossDesc[i], lossDesc[j]] = [lossDesc[j], lossDesc[i]];
+      [lossLocation[i], lossLocation[j]] = [
+        lossLocation[j],
+        lossLocation[i],
       ];
-      [gender[i], gender[j]] = [gender[j], gender[i]];
+      [lossReport[i], lossReport[j]] = [lossReport[j], lossReport[i]];
+      [vehicleDrivable[i], vehicleDrivable[j]] = [vehicleDrivable[j], vehicleDrivable[i]];
+      [vehicleTow[i], vehicleTow[j]] = [vehicleTow[j], vehicleTow[i]];
+      [airbags[i], airbags[j]] = [airbags[j], airbags[i]];
+      [damage[i], damage[j]] = [damage[j], damage[i]];
+      [impact[i], impact[j]] = [impact[j], impact[i]];
+      [injury[i], injury[j]] = [injury[j], injury[i]];
+      [injuryDesc[i], injuryDesc[j]] = [injuryDesc[j], injuryDesc[i]];
+      [injuryType[i], injuryType[j]] = [injuryType[j], injuryType[i]];
+      [treater[i], treater[j]] = [treater[j], treater[i]];
+      [agency[i], agency[j]] = [agency[j], agency[i]];
+      [agencyName[i], agencyName[j]] = [agencyName[j], agencyName[i]];
+      [agencyType[i], agencyType[j]] = [agencyType[j], agencyType[i]];
+      [firstReportLoss[i], firstReportLoss[j]] = [firstReportLoss[j], firstReportLoss[i]];
+      [where[i], where[j]] = [where[j], where[i]];
+
     }
     const shuffledData = {
-      name,
-      address,
-      phoneNumbers,
-      emails,
-      dob,
-      makes,
-      models,
-      years,
-      vins,
-      liabilities,
-      collisions,
-      comprehensives,
-      deductibles,
-      additionalDrivers,
-      gender,
+      model,
+      style,
+      vehicleLocation,
+      lossParty,
+      ownership,
+      owner,
+      otherContact,
+      relationship,
+      witness,
+      person,
+      lossCause,
+      lossTime,
+      lossDesc,
+      lossLocation,
+      lossReport,
+      vehicleDrivable,
+      vehicleTow,
+      airbags,
+      damage,
+      impact,
+      injury,
+      injuryDesc,
+      injuryType,
+      treater,
+      agency,
+      agencyName,
+      agencyType,
+      firstReportLoss,
+      where,
     };
     // console.log(this.database)
     console.log(shuffledData);
-    console.log(shuffledData['name'][1]);
-    console.log(shuffledData['address'][1]);
+    console.log(shuffledData['model'][1]);
+    console.log(shuffledData['style'][1]);
 
-    console.log(shuffledData['name'][2]);
-    console.log(shuffledData['phoneNumbers'][1]);
+    console.log(shuffledData['model'][2]);
+    console.log(shuffledData['vehicleLocation'][1]);
 
     //console.log(shuffledData['array1'][1]);
     //to verify user entered row count or not
@@ -1663,61 +1721,105 @@ export class CasualtyComponent implements OnInit {
 
       console.log(this.rows);
       this.objectArray2 = [];
-      console.log(shuffledData['phoneNumbers'][1]);
+      console.log(shuffledData['vehicleLocation'][1]);
       console.log(this.savedData);
 
       //number of table count
       for (let j = 0; j < this.rowCount; j++) {
         //getting the values from user in from the dropdown
-        const index = j % shuffledData['name'].length;
-        console.log(shuffledData['name'].length);
+        const index = j % shuffledData['model'].length;
+        console.log(shuffledData['model'].length);
         for (let i = 0; i < this.savedData.length; i++) {
           console.log(this.savedData[i].value);
-          if (this.savedData[i].value == 'name') {
-            this.objectArray1.push(shuffledData['name'][index]);
+          if (this.savedData[i].value == 'model') {
+            this.objectArray1.push(shuffledData['model'][index]);
           }
-          if (this.savedData[i].value == 'address') {
-            this.objectArray1.push(shuffledData['address'][index]);
+          if (this.savedData[i].value == 'style') {
+            this.objectArray1.push(shuffledData['style'][index]);
           }
-          if (this.savedData[i].value == 'phoneNumbers') {
-            this.objectArray1.push(shuffledData['phoneNumbers'][index]);
+          if (this.savedData[i].value == 'vehicleLocation') {
+            this.objectArray1.push(shuffledData['vehicleLocation'][index]);
           }
-          if (this.savedData[i].value == 'emails') {
-            this.objectArray1.push(shuffledData['emails'][index]);
+          if (this.savedData[i].value == 'lossParty') {
+            this.objectArray1.push(shuffledData['lossParty'][index]);
           }
-          if (this.savedData[i].value == 'dob') {
-            this.objectArray1.push(shuffledData['dob'][index]);
+          if (this.savedData[i].value == 'ownership') {
+            this.objectArray1.push(shuffledData['ownership'][index]);
           }
-          if (this.savedData[i].value == 'gender') {
-            this.objectArray1.push(shuffledData['gender'][index]);
+          if (this.savedData[i].value == 'lossReport') {
+            this.objectArray1.push(shuffledData['lossReport'][index]);
           }
-          if (this.savedData[i].value == 'makes') {
-            this.objectArray1.push(shuffledData['makes'][index]);
+          if (this.savedData[i].value == 'owner') {
+            this.objectArray1.push(shuffledData['owner'][index]);
           }
-          if (this.savedData[i].value == 'models') {
-            this.objectArray1.push(shuffledData['models'][index]);
+          if (this.savedData[i].value == 'otherContact') {
+            this.objectArray1.push(shuffledData['otherContact'][index]);
           }
-          if (this.savedData[i].value == 'years') {
-            this.objectArray1.push(shuffledData['years'][index]);
+          if (this.savedData[i].value == 'relationship') {
+            this.objectArray1.push(shuffledData['relationship'][index]);
           }
-          if (this.savedData[i].value == 'vins') {
-            this.objectArray1.push(shuffledData['vins'][index]);
+          if (this.savedData[i].value == 'witness') {
+            this.objectArray1.push(shuffledData['witness'][index]);
           }
-          if (this.savedData[i].value == 'liabilities') {
-            this.objectArray1.push(shuffledData['liabilities'][index]);
+          if (this.savedData[i].value == 'person') {
+            this.objectArray1.push(shuffledData['person'][index]);
           }
-          if (this.savedData[i].value == 'collisions') {
-            this.objectArray1.push(shuffledData['collisions'][index]);
+          if (this.savedData[i].value == 'lossCause') {
+            this.objectArray1.push(shuffledData['lossCause'][index]);
           }
-          if (this.savedData[i].value == 'comprehensives') {
-            this.objectArray1.push(shuffledData['comprehensives'][index]);
+          if (this.savedData[i].value == 'lossTime') {
+            this.objectArray1.push(shuffledData['lossTime'][index]);
           }
-          if (this.savedData[i].value == 'deductibles') {
-            this.objectArray1.push(shuffledData['deductibles'][index]);
+          if (this.savedData[i].value == 'lossDesc') {
+            this.objectArray1.push(shuffledData['lossDesc'][index]);
           }
-          if (this.savedData[i].value == 'additionalDrivers') {
-            this.objectArray1.push(shuffledData['additionalDrivers'][index]);
+          if (this.savedData[i].value == 'lossLocation') {
+            this.objectArray1.push(shuffledData['lossLocation'][index]);
           }
+          if (this.savedData[i].value == 'vehicleDrivable') {
+            this.objectArray1.push(shuffledData['vehicleDrivable'][index]);
+          }
+          if (this.savedData[i].value == 'vehicleTow') {
+            this.objectArray1.push(shuffledData['vehicleTow'][index]);
+          }
+          if (this.savedData[i].value == 'airbags') {
+            this.objectArray1.push(shuffledData['airbags'][index]);
+          }
+          if (this.savedData[i].value == 'damage') {
+            this.objectArray1.push(shuffledData['damage'][index]);
+          }
+          if (this.savedData[i].value == 'impact') {
+            this.objectArray1.push(shuffledData['impact'][index]);
+          }
+          if (this.savedData[i].value == 'injury') {
+            this.objectArray1.push(shuffledData['injury'][index]);
+          }
+          if (this.savedData[i].value == 'injuryDesc') {
+            this.objectArray1.push(shuffledData['injuryDesc'][index]);
+          }
+          if (this.savedData[i].value == 'injuryType') {
+            this.objectArray1.push(shuffledData['injuryType'][index]);
+          }
+          if (this.savedData[i].value == 'treater') {
+            this.objectArray1.push(shuffledData['treater'][index]);
+          }
+          if (this.savedData[i].value == 'agency') {
+            this.objectArray1.push(shuffledData['agency'][index]);
+          }
+          if (this.savedData[i].value == 'agencyName') {
+            this.objectArray1.push(shuffledData['agencyName'][index]);
+          }
+          if (this.savedData[i].value == 'agencyType') {
+            this.objectArray1.push(shuffledData['agencyType'][index]);
+          }
+          if (this.savedData[i].value == 'firstReportLoss') {
+            this.objectArray1.push(shuffledData['firstReportLoss'][index]);
+          }
+          if (this.savedData[i].value == 'where') {
+            this.objectArray1.push(shuffledData['where'][index]);
+          }
+
+          
 
         }
         //overall data stored in objectArray2 for all row

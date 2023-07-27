@@ -17,20 +17,36 @@
         <td><input type="text" [(ngModel)]="row.field" /></td>
         <td>
           <select [(ngModel)]="row.value">
-            <option value="name">Name</option>
-            <option value="address">Address</option>
-            <option value="phoneNumbers">Phone Number</option>
-            <option value="emails">Email Address</option>
-            <option value="dob">Date of Birth</option>
-            <option value="makes">Make</option>
-            <option value="models">Model</option>
-            <option value="years">Year</option>
-            <option value="vins">Vehicle Identification Number (VIN)</option>
-            <option value="liabilities">Liability</option>
-            <option value="collisions">Collision</option>
-            <option value="comprehensives">Comprehensive Coverage</option>
-            <option value="deductibles">Deductibles</option>
-            <option value="additionalDrivers">Additional Drivers</option>
+            <option value="model">Model</option>
+            <option value="style">Style was the vehicle being used for business</option>
+            <option value="vehicleLocation">Vehicle Location</option>
+            <option value="lossParty">Loss Party</option>
+            <option value="ownership">Ownership Status</option>
+            <option value="owner">Owner</option>
+            <option value="otherContact">Other Contact</option>
+            <option value="relationship">Relationship</option>
+            <option value="witness">Who was the witness?</option>
+            <option value="where">Where Were They</option>
+            <option value="person">Select a Person</option>
+            <option value="lossCause">Loss Cause</option>
+            <option value="lossTime">Loss Time/option>
+            <option value="lossDesc">Loss Description</option>
+            <option value="lossLocation">Loss Location</option>
+            <option value="lossReport">Loss Reported By</option> 
+            <option value="vehicleDrivable">Vehicle Drivable</option>
+            <option value="vehicleTow">Was the Vechile Towed?</option>
+            <option value="airbags">Did the Airbags Deploy?</option>
+            <option value="damage">How Severe Is the Damage</option>
+            <option value="impact">Point of First Impact</option>
+            <option value="injury">Injured Person</option>
+            <option value="injuryDesc">Injury Description</option>
+            <option value="injuryType">Type of Injury</option>
+            <option value="treater">Treater At Scene?</option>
+            <option value="agency">Agency</option>
+            <option value="agencyName">Agency Name</option>
+            <option value="agencyType">Agency Type</option>
+            <option value="firstReportLoss">First Report of Loss</option>
+           
           </select>
         </td>
         <td><button (click)="deleteRow(row)">Delete</button></td>

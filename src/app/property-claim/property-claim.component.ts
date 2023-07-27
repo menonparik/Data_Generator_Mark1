@@ -22,7 +22,7 @@ export class PropertyClaimComponent implements OnInit {
   objectArray1: any[] = [];
   objectArray2: any[] = [];
   data: any[] = [];
-
+//hi
   name: string = '';
   name1: any[] = [];
   name2: any[] = [];
