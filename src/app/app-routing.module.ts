@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'auto', component: AutoComponent},
   {path: 'casualty', component: CasualtyComponent},
-  {path: 'AI', component: AIComponent},
+  {path: 'ai', component: AIComponent},
   {path: 'personal', component: PersonalComponent},
   {path: 'property_claim', component: PropertyClaimComponent},
   {path: 'auto_claim', component: AutoClaimComponent},
